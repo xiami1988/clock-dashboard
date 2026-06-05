@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [1.20.4](https://github.com/teojs/clock-dashboard/compare/v1.20.3...v1.20.4) (2026-06-05)
+
+
+### Bug Fixes
+
+* ensure correct date parsing in WeatherForecastModal for daily forecasts ([a75a6ad](https://github.com/teojs/clock-dashboard/commit/a75a6ad085679d98e07c4a16a752ba9c5207832a))
+
 ### [1.20.3](https://github.com/teojs/clock-dashboard/compare/v1.20.2...v1.20.3) (2026-03-26)
 
 ### [1.20.2](https://github.com/teojs/clock-dashboard/compare/v1.20.1...v1.20.2) (2026-03-25)
