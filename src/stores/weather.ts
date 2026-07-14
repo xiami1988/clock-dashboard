@@ -6,7 +6,6 @@ import { searchCities as searchCitiesApi } from '../api/geocoding'
 import { getCurrentPosition, reverseGeocode as reverseGeocodeApi } from '../api/location'
 import { fetchAirQualityData, fetchWeatherData } from '../api/weather'
 import { i18n } from '../i18n'
-import { toSimplifiedChinese } from '../utils/chinese'
 import { mapWmoCode } from '../utils/weather'
 import { useConfigStore } from './config'
 
@@ -33,13 +32,6 @@ export const useWeatherStore = defineStore('weather', () => {
   const locationText = ref(i18n.global.t('weather.status.locating'))
   const weatherInfo = ref<WeatherInfo>({ text: i18n.global.t('weather.status.loading'), icon: mapWmoCode(-1).icon })
   const cachedCoords = ref<{ lat: number, lon: number, city: string } | null>(null)
-
-  function applySimplifiedChinese(text: string): string {
-    if (language.value === 'zh-CN' && text) {
-      return toSimplifiedChinese(text)
-    }
-    return text
-  }
 
   async function fetchWeather(lat: number, lon: number) {
     try {
@@ -105,8 +97,8 @@ export const useWeatherStore = defineStore('weather', () => {
           const displayName = cleanDisplayName(rawDisplayName)
 
           return {
-            name: applySimplifiedChinese(cityName || trimmedQuery),
-            displayName: applySimplifiedChinese(displayName || cityName || trimmedQuery),
+            name: cityName || trimmedQuery,
+            displayName: displayName || cityName || trimmedQuery,
             latitude: Number.parseFloat(r.lat),
             longitude: Number.parseFloat(r.lon),
           }
@@ -143,7 +135,7 @@ export const useWeatherStore = defineStore('weather', () => {
     try {
       const data = await reverseGeocodeApi(lat, lon, language.value)
       const city = data.city || data.locality || data.principalSubdivision || i18n.global.t('weather.status.unknownCity')
-      return applySimplifiedChinese(city)
+      return city
     }
     catch (e) {
       return `${lon.toFixed(2)}, ${lat.toFixed(2)}`
@@ -191,12 +183,11 @@ export const useWeatherStore = defineStore('weather', () => {
       const coords = await getCurrentPosition(5000, language.value)
       const locationData = await reverseGeocodeApi(coords.latitude, coords.longitude, language.value)
       const cityName = locationData.locality || locationData.city || locationData.principalSubdivision || i18n.global.t('weather.status.unknownCity')
-      const finalCityName = applySimplifiedChinese(cityName)
-      locationText.value = finalCityName
+      locationText.value = cityName
       cachedCoords.value = {
         lat: coords.latitude,
         lon: coords.longitude,
-        city: finalCityName,
+        city: cityName,
       }
       await fetchWeather(coords.latitude, coords.longitude)
     }
