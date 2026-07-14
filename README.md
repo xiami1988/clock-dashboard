@@ -3,13 +3,13 @@
 [![License: CC BY-NC-SA 4.0](https://img.shields.io/badge/License-CC%20BY--NC--SA%204.0-lightgrey.svg)](LICENSE)
 [![Vue](https://img.shields.io/badge/vue-3.4-brightgreen.svg)](https://vuejs.org/)
 [![Vite](https://img.shields.io/badge/vite-7.0-blueviolet.svg)](https://vitejs.dev/)
-[![releases](https://img.shields.io/github/v/release/teojs/clock-dashboard?color=green&label=releases)](https://github.com/teojs/clock-dashboard/releases)
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=teojs.clock-dashboard)
+[![releases](https://img.shields.io/github/v/release/xiami1988/clock-dashboard?color=green&label=releases)](https://github.com/xiami1988/clock-dashboard/releases)
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=xiami1988.clock-dashboard)
 
 一个基于 Vue 3 + TypeScript + Vite + Tailwind CSS 构建的在线天气时钟看板。
 将闲置旧 iPad 变为时钟看板，支持天气、农历、日历、Home Assistant 智能设备控制（通过左右滑动切换页面）。
 
-**🌐 在线地址：** [https://teojs.github.io/clock-dashboard/](https://teojs.github.io/clock-dashboard/)
+**🌐 在线地址：** [https://xiami1988.github.io/clock-dashboard/](https://xiami1988.github.io/clock-dashboard/)
 
 **👏 欢迎加入讨论：** [QQ群(1018023465) ↗](https://qm.qq.com/q/x6hf1Evdni)
 
@@ -92,7 +92,7 @@
 #### 1. 克隆项目
 
 ```bash
-git clone https://github.com/teojs/clock-dashboard.git
+git clone https://github.com/xiami1988/clock-dashboard.git
 cd clock-dashboard
 ```
 
@@ -207,7 +207,7 @@ docker image prune -f
 ```yaml
 http:
   cors_allowed_origins:
-    - https://your-github-username.github.io # 如果使用 GitHub Pages 部署
+    - https://xiami1988.github.io # 如果使用 GitHub Pages 部署
     - http://192.168.1.xxx:3000 # 本地开发地址
     - http://192.168.1.xxx:8080 # Docker 部署地址
 ```
@@ -271,7 +271,7 @@ http:
 
 - ✨ 新增天气设置弹窗，支持设置天气刷新间隔、下雨、下雪、打雷特效开关
 
-> 查看完整更新日志：[Releases](https://github.com/teojs/clock-dashboard/releases)
+> 查看完整更新日志：[Releases](https://github.com/xiami1988/clock-dashboard/releases)
 
 ---
 
@@ -290,4 +290,4 @@ http:
 
 ## Star History
 
-[![Star History Chart](https://api.star-history.com/svg?repos=teojs/clock-dashboard&type=date&legend=bottom-right)](https://www.star-history.com/#teojs/clock-dashboard&type=date&legend=bottom-right)
+[![Star History Chart](https://api.star-history.com/svg?repos=xiami1988/clock-dashboard&type=date&legend=bottom-right)](https://www.star-history.com/#xiami1988/clock-dashboard&type=date&legend=bottom-right)
