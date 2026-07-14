@@ -9,7 +9,7 @@ export type SupportedLocale = typeof SUPPORTED_LOCALES[number]
 export function normalizeLocale(locale?: string): SupportedLocale {
   if (!locale) return 'zh-CN'
   const normalized = locale.toLowerCase()
-  // 所有中文环境统一默认为简体中文，用户可在设置中手动切换繁体
+  if (normalized.startsWith('zh-tw') || normalized.startsWith('zh-hk')) return 'zh-TW'
   if (normalized.startsWith('zh')) return 'zh-CN'
   if (normalized.startsWith('en')) return 'en-US'
   return 'zh-CN'
