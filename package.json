@@ -23,6 +23,7 @@
     "home-assistant-js-websocket": "^9.6.0",
     "lucide-vue-next": "^0.300.0",
     "lunar-typescript": "^1.7.5",
+    "opencc-js": "^0.3.6",
     "pinia": "^3.0.4",
     "pinia-plugin-persistedstate": "^4.7.1",
     "tailwind-merge": "^2.2.0",
