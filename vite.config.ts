@@ -14,6 +14,7 @@ export default defineConfig({
     legacy({
       targets: ['ios >= 9'],
       additionalLegacyPolyfills: ['regenerator-runtime/runtime'],
+      modernPolyfills: true,
     }),
     VitePWA({
       registerType: 'autoUpdate',
@@ -74,6 +75,7 @@ export default defineConfig({
     port: 3000,
   },
   build: {
+    target: 'es2015',
     minify: 'terser',
     rollupOptions: {
       output: {
