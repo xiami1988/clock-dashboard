@@ -59,7 +59,6 @@ export const useConfigStore = defineStore('config', () => {
   }
 }, {
   persist: {
-    key: 'clock-config-v2',
     omit: ['showDrawer', 'activeTab'],
   },
 })
